@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/style.css">
+<title>About this Website — igin notes</title>
+<body>
+  <header>
+    <h1>igin notes</h1>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li><a href="../">Welcome</a></li>
+        
+          <li><a href="../blog/">Blog</a></li>
+        
+          <li><a href="../projects/">Projects</a></li>
+        
+          <li class="active"><a href="../about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    
+  <h2>About this Website</h2>
+  <p>This is a website that was made with the Lektor quickstart.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
+
+<span class="n">logfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;yourlogfile.log&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="n">clean_log</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">logfile</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># copy the URLS to an empty list.</span>
+        <span class="c1"># We get the part between GET and HTTP</span>
+        <span class="n">clean_log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="p">:</span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;HTTP&quot;</span><span class="p">)])</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">counter</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">clean_log</span><span class="p">)</span>
+
+<span class="c1"># get the Top 50 most popular URLs</span>
+<span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;    &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">logfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+<p>And it does not contain a lot of information.</p>
+
+
+  </div>
+  <footer>
+    &copy; Copyright 2017 by Nicholas Pleschko.
+  </footer>
+</body>
