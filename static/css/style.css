@@ -4,7 +4,6 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    font-family: 'Lato', sans-serif;
     margin: 0;
     height: 100%;
     display: flex;
@@ -13,13 +12,19 @@ body {
     justify-content: space-between;
 }
 
-a {
-    color: rgb(172, 172, 172);
-    text-decoration: none;
+.section {
+    text-align: center;
 }
 
-a:hover {
-    color: rgb(122, 122, 122);
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    font-weight: 600;
+}
+
+.card {
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 header {
@@ -29,6 +34,7 @@ header {
     align-items: flex-end;
     flex: 1;
     min-height: 80px;
+    margin-bottom: 6rem;
 }
 
 header #background-image {
@@ -38,20 +44,13 @@ header #background-image {
     right: 0;
     top: 0;
     bottom: 0;
-    background-image: url('images/alaska-header.jpg');
-    background-position: center center;
-    background-size: cover;
+    /*background: url('../images/alaska-header.jpg') center center;*/
+    /*background-size: cover;*/
+    /*border-bottom: 2px solid rgba(156,179,193,1);*/
 }
 
 footer, div.page {
     padding: 20px 30px;
-}
-
-header h1 {
-    color: white;
-    margin: 0;
-    font-weight: normal;
-    font-size: 4vw;
 }
 
 header nav ul {
@@ -67,24 +66,22 @@ header nav ul li {
 }
 
 header .avatar {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    background-color: rgba(156,179,193,1);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: -50%;
-    border: 5px solid white;
+    margin-bottom: -40%;
+    font-size: 5rem;
+    background: url('../images/nplogo.svg') center center;
+    background-size: 80%;
+    background-repeat: no-repeat;
 }
 
 div.page {
     background: transparent;
     flex: 4;
-}
-
-div.page h1 {
-    font-size: 4vw;
 }
 
 footer {
